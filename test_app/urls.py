@@ -17,9 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from testapp.views import TestView
-
+from employeeAPI.views import PostEmployee,GetEmployee
 urlpatterns = [
     path('api-auth/',include('rest_framework.urls')),
     path('admin/', admin.site.urls),
-    path('',TestView.as_view(),name='testView')
+    path('',TestView.as_view(),name='testView'),
+    path('post_emp',PostEmployee.as_view(),name='Post-Employee'),
+    path('get-emp',GetEmployee.as_view(),name='Get-Employee')
 ]
